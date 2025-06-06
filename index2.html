@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundSphere Pro - Enceinte Bluetooth Haut de Gamme</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2563eb;       /* Bleu principal */
+      --primary-dark: #1e40af;  /* Bleu foncé */
+      --secondary: #e11d48;     /* Rouge accent */
+      --tech-accent: #10b981;   /* Vert technique */
+      --dark: #1f2937;          /* Texte foncé */
+      --light: #f9fafb;         /* Fond clair */
+      --gray: #6b7280;          /* Texte secondaire */
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+    
+    .tech-badge {
+      background-color: var(--tech-accent);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" /></svg>');
+      background-size: cover;
+    }
+    
+    .specs-highlight {
+      border-left: 4px solid var(--tech-accent);
+      padding-left: 15px;
+      margin: 20px 0;
+    }
+    
+    .component-card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+    
+    .component-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .component-card .card-header {
+      background-color: var(--primary);
+      color: white;
+      font-weight: 600;
+    }
+    
+    .assembly-step {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 30px;
+    }
+    
+    .assembly-step::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: var(--primary);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    
+    .warning-note {
+      background-color: #fff3bf;
+      border-left: 4px solid #ffd43b;
+      padding: 15px;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .tech-table {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .tech-table th {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
+    }
+    
+    .btn-outline-tech {
+      border-color: var(--tech-accent);
+      color: var(--tech-accent);
+    }
+    
+    .btn-outline-tech:hover {
+      background-color: var(--tech-accent);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold mb-3">SoundSphere Pro</h1>
+        <p class="lead mb-4">L'enceinte DIY haute performance avec composants audiophiles</p>
+        <div class="d-flex gap-3">
+          <a href="#specs" class="btn btn-light btn-lg px-4">
+            <i class="fas fa-sliders-h me-2"></i>Caractéristiques
+          </a>
+          <a href="#components" class="btn btn-outline-light btn-lg px-4">
+            <i class="fas fa-microchip me-2"></i>Composants
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block">
+        <img src="img/produit-hero.png" alt="SoundSphere Pro" class="img-fluid floating" style="animation: floating 3s ease-in-out infinite;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Specifications -->
+<section id="specs" class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Caractéristiques Techniques</h2>
+      <p class="text-muted">Des performances exceptionnelles grâce à des composants sélectionnés</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="specs-highlight">
+          <h4><i class="fas fa-volume-up text-primary me-2"></i> Audio</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><strong>Puissance:</strong> 2×30W RMS</li>
+            <li class="mb-2"><strong>Haut-parleurs:</strong> Dayton Audio PC83-8</li>
+            <li class="mb-2"><strong>Réponse:</strong> 60Hz-20kHz (±3dB)</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="specs-highlight">
+          <h4><i class="fas fa-bolt text-primary me-2"></i> Alimentation</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><strong>Batteries:</strong> 3×18650 3400mAh</li>
+            <li class="mb-2"><strong>Autonomie:</strong> Jusqu'à 24h</li>
+            <li class="mb-2"><strong>Charge:</strong> 19V DC 3.4A</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="specs-highlight">
+          <h4><i class="fas fa-wifi text-primary me-2"></i> Connectivité</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><strong>Bluetooth:</strong> 5.0 avec DSP</li>
+            <li class="mb-2"><strong>Entrée:</strong> AUX 3.5mm</li>
+            <li class="mb-2"><strong>Portée:</strong> 15m</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="tech-table mt-5">
+      <table class="table table-hover mb-0">
+        <thead>
+          <tr>
+            <th colspan="2" class="text-center">Fiche Technique Complète</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td width="40%"><strong>Module Amplificateur</strong></td>
+            <td>WONDOM JAB2-30 V2 (2×30W + BT 5.0 + DSP)</td>
+          </tr>
+          <tr>
+            <td><strong>Gestion Batterie</strong></td>
+            <td>WONDOM AA-JA11113 avec protection</td>
+          </tr>
+          <tr>
+            <td><strong>Connectique</strong></td>
+            <td>WONDOM AA-JA11114 (kit câbles)</td>
+          </tr>
+          <tr>
+            <td><strong>Boîtier</strong></td>
+            <td>Bois massif + pièces imprimées 3D</td>
+          </tr>
+          <tr>
+            <td><strong>Dimensions</strong></td>
+            <td>220×120×167 mm (L×P×H)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Components -->
+<section id="components" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Composants Haut de Gamme</h2>
+      <p class="text-muted">Des références professionnelles pour une qualité audio exceptionnelle</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="component-card card h-100">
+          <div class="card-header">
+            <i class="fas fa-volume-up me-2"></i> Haut-parleurs
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Dayton Audio PC83-8</h5>
+            <p class="card-text">Haut-parleur 30W, 8Ω avec diaphragme en polypropylène traité pour une réponse linéaire.</p>
+            <div class="mt-3">
+              <span class="tech-badge">30W RMS</span>
+              <span class="tech-badge">8Ω</span>
+              <span class="tech-badge">60Hz-20kHz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="component-card card h-100">
+          <div class="card-header">
+            <i class="fas fa-microchip me-2"></i> Module Audio
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">WONDOM JAB2-30 V2</h5>
+            <p class="card-text">Amplificateur 2×30W avec Bluetooth 5.0, DSP intégré et gestion avancée du signal.</p>
+            <div class="mt-3">
+              <span class="tech-badge">Bluetooth 5.0</span>
+              <span class="tech-badge">DSP intégré</span>
+              <span class="tech-badge">2×30W</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="component-card card h-100">
+          <div class="card-header">
+            <i class="fas fa-battery-full me-2"></i> Alimentation
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">TrustFire 18650</h5>
+            <p class="card-text">Batteries Li-ion 3400mAh avec circuit de protection pour une autonomie prolongée.</p>
+            <div class="mt-3">
+              <span class="tech-badge">3400mAh</span>
+              <span class="tech-badge">3.7V</span>
+              <span class="tech-badge">Protection</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Assembly Guide Preview -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Guide de Montage Professionnel</h2>
+      <p class="text-muted">Toutes les étapes détaillées pour assembler votre SoundSphere Pro</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="assembly-step">
+          <h4>Préparation du Boîtier</h4>
+          <p>Découpe et assemblage des éléments en bois et pièces imprimées 3D selon les cotes précises.</p>
+          <div class="alert alert-secondary mt-3">
+            <strong>Cotes clés :</strong>
+            <ul class="mb-0">
+              <li>Façade : 220×120 mm ±0.5 mm</li>
+              <li>Hauteur : 167 mm ±0.5 mm</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="assembly-step">
+          <h4>Câblage Électronique</h4>
+          <p>Assemblage des batteries en série (11.1V) et connexion au module de gestion de charge.</p>
+          <div class="warning-note mt-3">
+            <i class="fas fa-exclamation-triangle me-2"></i> Respecter la polarité lors du montage des batteries
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="assembly-step">
+          <h4>Installation des Composants</h4>
+          <p>Fixation du module amplificateur, des haut-parleurs et des boutons de contrôle dans le boîtier.</p>
+          <ul>
+            <li>Module JAB2-30 vissé avec dégagement thermique</li>
+            <li>Haut-parleurs fixés en façade</li>
+            <li>Boutons sécurisés par écrous</li>
+          </ul>
+        </div>
+        
+        <div class="assembly-step">
+          <h4>Vérifications Finales</h4>
+          <p>Test de toutes les connexions et vérification de l'isolation électrique avant mise sous tension.</p>
+          <div class="alert alert-success mt-3">
+            <i class="fas fa-check-circle me-2"></i> Utiliser un multimètre pour tester la continuité
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5">
+      <a href="notice_montage.pdf" class="btn btn-primary btn-lg px-5 me-3" download>
+        <i class="fas fa-download me-2"></i>Télécharger le Guide Complet
+      </a>
+      <a href="#contact" class="btn btn-outline-tech btn-lg px-5">
+        <i class="fas fa-question-circle me-2"></i>Questions Techniques
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Documentation & Support -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Ressources Techniques</h2>
+      <p class="text-muted">Tous les documents pour réussir votre projet</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+              <i class="fas fa-book fa-2x"></i>
+            </div>
+            <h5>Cahier des Charges</h5>
+            <p class="text-muted">Spécifications techniques détaillées</p>
+            <a href="#" class="btn btn-outline-primary">Télécharger (PDF)</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+              <i class="fas fa-file-pdf fa-2x"></i>
+            </div>
+            <h5>Schémas de Câblage</h5>
+            <p class="text-muted">Diagrammes détaillés des connexions</p>
+            <a href="#" class="btn btn-outline-primary">Télécharger (PDF)</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+              <i class="fas fa-tools fa-2x"></i>
+            </div>
+            <h5>Fichiers CAO</h5>
+            <p class="text-muted">Modèles 3D pour impression</p>
+            <a href="#" class="btn btn-outline-primary">Télécharger (ZIP)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section id="contact" class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card border-0 shadow">
+          <div class="card-body p-5">
+            <h2 class="text-center fw-bold mb-4">Contact Technique</h2>
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Nom complet</label>
+                  <input type="text" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Adresse email</label>
+                  <input type="email" class="form-control" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Sujet</label>
+                  <select class="form-select">
+                    <option>Question technique</option>
+                    <option>Commande de composants</option>
+                    <option>Support assemblage</option>
+                    <option>Autre demande</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control" rows="4" required></textarea>
+                </div>
+                <div class="col-12 text-center mt-4">
+                  <button type="submit" class="btn btn-primary btn-lg px-5">
+                    <i class="fas fa-paper-plane me-2"></i>Envoyer
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <h5>SoundSphere Pro</h5>
+        <p>L'enceinte DIY haute performance pour audiophiles et makers.</p>
+        <div class="mt-3">
+          <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <h5>Ressources</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#" class="text-white-50">Documentation technique</a></li>
+          <li class="mb-2"><a href="#" class="text-white-50">FAQ Technique</a></li>
+          <li class="mb-2"><a href="#" class="text-white-50">Tutoriels vidéo</a></li>
+          <li class="mb-2"><a href="#" class="text-white-50">Forum communautaire</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <h5>Contact</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><i class="fas fa-envelope me-2"></i> support@soundsphere.fr</li>
+          <li class="mb-2"><i class="fas fa-phone me-2"></i> +33 1 23 45 67 89</li>
+          <li><i class="fas fa-map-marker-alt me-2"></i> 123 Rue de l'Audio, Paris</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="my-4 bg-secondary">
+    <div class="text-center">
+      <p class="mb-0 small">© 2023 SoundSphere Pro. Projet DIY par [Votre Nom]. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Animation for floating image
+  document.addEventListener('DOMContentLoaded', function() {
+    const floating = document.querySelector('.floating');
+    if (floating) {
+      floating.style.animation = 'floating 3s ease-in-out infinite';
+    }
+    
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  });
+  
+  // Keyframes for floating animation
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+</body>
+</html>
